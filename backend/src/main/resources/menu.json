@@ -1,0 +1,41 @@
+{
+  "button": [{
+    "name": "自助服务",
+    "sub_button": [{
+      "type": "view",
+      "name": "审计报告",
+      "url": "http://sg.robbtsang.net/link-to-pdf.html"
+    }]
+  }, {
+    "name": "业务办理",
+    "sub_button": [{
+      "type": "view",
+      "name": "财会服务",
+      "url": "http://sg.robbtsang.net/todo.html"
+    },{
+      "type": "view",
+      "name": "海外投资",
+      "url": "http://sg.robbtsang.net/todo.html"
+    },{
+      "type": "view",
+      "name": "医疗耗材",
+      "url": "http://sg.robbtsang.net/todo.html"
+    },{
+      "type": "view",
+      "name": "最新业务",
+      "url": "http://sg.robbtsang.net/todo.html"
+    }]
+  }, {
+    "name": "绑定 | 解绑",
+    "sub_button": [{
+      "type": "view",
+      "name": "绑定Forever商户",
+      "test_url": "http://sg.robbtsang.net/bind.html",
+      "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8be418543ffd11ee&redirect_uri=http%3A%2F%2Fsg.robbtsang.net%2Fwx%2Foauth&response_type=code&scope=snsapi_userinfo&state=bind#wechat_redirect"
+    }, {
+      "type": "click",
+      "name": "解绑Forever商户",
+      "key": "UNBIND"
+    }]
+  }]
+}

@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: 'dev'
+  main:
+    banner-mode: 'off'
+
+server:
+  port: 8080
+
+---
+
+spring:
+  profiles: 'dev'
+
+wechat:
+  app:
+    id: 'wx8be418543ffd11ee'
+    secret: 'd31d839a1e3dea277c346f506b4976c7'
+    token: '70669455'
+  template:
+    report-download-notification: ''
+
+---
+
+spring:
+  profiles: 'prod'
+
+logging:
+  file:
+    max-size: '10MB'
+    total-size-cap: '100MB'
+    path: '/var/log/forever-demo-server'
+    name: '/var/log/forever-demo-server/all.log'
+
+#wechat:
+#  app-id: 'wx8be418543ffd11ee'
+#  app-secret: 'd31d839a1e3dea277c346f506b4976c7'

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #title {
+        font-size: 2rem;
+      }
+
+      #desc {
+        font-size: 1rem;
+      }
+    </style>
+    <title>Forever</title>
+  </head>
+  <body>
+    <div class="h-100 d-flex  align-items-center justify-content-center">
+      <div class="w-50 form-group text-center">
+        <label id="title" class="my-0">Title</label>
+        <small id="desc" class="form-text text-muted mt-1"></small> 
+        <button id="btn" class="btn btn-primary my-3">Close</button>
+      </div>
+    </div>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+      function getQueryStrings() {
+          var vars = [], hash;
+          var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+          for(var i = 0; i < hashes.length; i++)
+          {
+              hash = hashes[i].split('=');
+              vars.push(hash[0]);
+              vars[hash[0]] = decodeURIComponent(hash[1]);
+          }
+          return vars;
+      }
+
+      window.onload = function(evt){
+        let qs = getQueryStrings();
+        if(qs['title']) document.querySelector("#title").innerHTML = qs['title'];
+        if(qs['desc']) document.querySelector("#desc").innerHTML = qs['desc'];
+
+        let btn = document.querySelector("#btn");
+        if(qs['btn']) btn.innerHTML = qs['btn'];
+        btn.onclick = function(evt){
+          wx.closeWindow();
+          history.back();
+          window.close();
+        }
+      }
+    </script>
+  </body>
+</html>

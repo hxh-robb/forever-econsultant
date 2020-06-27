@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      input {
+        text-align: center;
+      }
+
+      a {
+        font-size: 1.4rem;
+      }
+
+      /**/::placeholder {
+        text-align: center;
+      }
+
+      input:placeholder-shown {
+        text-align: right;
+      } 
+
+      .main {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+      }
+
+    </style>
+    <title>Forever - 绑定商户信息</title>
+  </head>
+  <body>
+    <div class="main">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item">
+          <a class="nav-link active font-weight-bold" id="by-code" href="#by-code-form"  data-toggle="tab" aria-controls="by-code-form" aria-selected="true">使用绑定码</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" id="by-phone" href="#by-phone-form"  data-toggle="tab" aria-controls="by-phone-form" aria-selected="false">使用手机号</a>
+        </li>
+      </ul>
+
+      <div class="tab-content flex-grow-1">
+        <div class="h-100 tab-pane show active" id="by-code-form" aria-labelledby="by-code">
+          <div class="h-100 d-flex  align-items-center justify-content-center">
+            <div class="form-group text-center">
+              <!-- <label>请输入绑定码</label> -->
+              <input type="code" placeholder="请输入绑定码" class="form-control"">
+              <!-- <small id="emailHelp" class="form-text text-muted my-2">请联系Forever公司索取绑定码</small> -->
+              <button class="btn btn-primary mt-4">绑定商户信息</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group h-100 tab-pane" id="by-phone-form" aria-labelledby="by-phone">
+          <div class="h-100 d-flex align-items-center justify-content-center">本功能尚未开通，敬请期待。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script>
+        $(function(){
+          $('button').click(function(){
+            window.location.replace('msgbox.html?title=绑定失败&desc=无效的绑定码&btn=返回公众号')
+          });
+        });
+      </script>
+  </body>
+</html>

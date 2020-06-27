@@ -1,0 +1,1 @@
+docker run --rm --name demo -p 8080:8080 -m 128M -d forever-demo-server:0.1
